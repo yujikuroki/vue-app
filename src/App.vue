@@ -60,7 +60,7 @@
             headers: { 'Content-type': 'application/json; charset=UTF-8' },
           })
           const data = await response.json()
-          this.employees = this.employees.map(employee => (employee.id ? data : employee))
+          this.employees = this.employees.map(employee => (employee.id === id ? data : employee))
         } catch (error) {
           console.error(error)
         }
@@ -85,6 +85,11 @@
   button {
     background: #009435;
     border: 1px solid #009435;
+  }
+
+  .muted-butoon {
+    background: white;
+    color: gray;
   }
 
   .small-container {
